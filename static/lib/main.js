@@ -6,13 +6,18 @@ $(document).ready(() => {
       const { cid } = ajaxify.data;
 
       // insert head dom
-      const container = $('<div id="category-header"></div>');
+      const container = $('<div id="category-header" style="background-color: rgba(255, 255, 255, 0.8);border-radius: 30px;padding: 1.5rem;display: none;"></div>');
       $('[data-widget-area="header"]').append(container);
       const setContent = (html) => { container.html(html); };
 
       const load = async () => {
         const content = await socket.emit('plugins.categoryheader.getRendered', { cid });
         setContent(content);
+        if (content) {
+          container.show();
+        } else {
+          container.hide();
+        }
       };
 
       load();
