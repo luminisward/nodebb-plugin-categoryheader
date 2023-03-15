@@ -1,7 +1,6 @@
 {
   "id": "nodebb-plugin-categoryheader",
   "url": "https://github.com/luminisward/nodebb-plugin-categoryheader",
-  "library": "./library.js",
   "hooks": [
     {
       "hook": "static:app.load",
